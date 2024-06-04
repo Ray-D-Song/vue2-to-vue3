@@ -1,0 +1,35 @@
+{
+  "name": "vue2-to-vue3",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.24.6",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@uiw/codemirror-theme-sublime": "^4.22.1",
+    "@uiw/react-codemirror": "^4.22.1",
+    "magic-string": "^0.30.10",
+    "next": "14.2.3",
+    "parser": "link:@types/babel/parser",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-use": "^17.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.20.0",
+    "@babel/types": "^7.24.6",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
