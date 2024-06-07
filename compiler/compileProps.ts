@@ -10,7 +10,7 @@ interface PropMeta {
 	validator: string
 }
 
-export default function compileProps([ast]: Statement[], ms: MagicString) {
+export default function compileProps(ast: Statement, ms: MagicString) {
 	if (ast.type !== 'VariableDeclaration')
 		return MESSAGE.input_err
 	const init = ast.declarations[0].init
@@ -72,7 +72,6 @@ function processPropItem(item: ObjProperty, ms: MagicString) {
 			}
 			if (iitem.key.name === 'default') {
 				const raw = ms.slice(iitem.value.start as number, iitem.value.end as number)
-				// eslint-disable-next-line no-eval
 				defaultValue = eval(`(${raw})()`)
 			}
 			if (iitem.key.name === 'required') {
@@ -118,4 +117,12 @@ function constructer2Type(name: string) {
 		default:
 			return 'unknown'
 	}
+}
+
+export function beforeCompileProps(str: string): string {
+	const reg = /props:\s*(.*)/s
+	const match = str.match(reg)
+	if (match)
+		return `const props = ${match[1]}`
+	else return ''
 }
