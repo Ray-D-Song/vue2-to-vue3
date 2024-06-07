@@ -38,14 +38,13 @@ export default function Home() {
 				const ms = new MagicString(newStr)
 				const raw = pm.compiler(ast, ms)
 
-				// const response = await fetch('/api/code-fmt', {
-				// 	method: 'POST',
-				// 	body: raw,
-				// })
+				const response = await fetch('/api/code-fmt', {
+					method: 'POST',
+					body: raw,
+				})
 
-				// const fmtCode = await response.text()
-				// setOutputCode(fmtCode)
-				setOutputCode(raw)
+				const fmtCode = await response.text()
+				setOutputCode(fmtCode)
 			}
 			catch (e: any) {
 				setOutputCode(e.stack)

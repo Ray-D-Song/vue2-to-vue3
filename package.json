@@ -11,6 +11,8 @@
 	"dependencies": {
 		"@babel/parser": "^7.24.6",
 		"@codemirror/lang-javascript": "^6.2.2",
+		"@typescript-eslint/eslint-plugin": "^7.12.0",
+		"@typescript-eslint/parser": "^7.12.0",
 		"@typescript-eslint/utils": "^7.12.0",
 		"@uiw/codemirror-theme-sublime": "^4.22.1",
 		"@uiw/react-codemirror": "^4.22.1",
@@ -22,7 +24,8 @@
 		"parser": "link:@types/babel/parser",
 		"react": "^18",
 		"react-dom": "^18",
-		"react-use": "^17.5.0"
+		"react-use": "^17.5.0",
+		"typescript-eslint": "^7.12.0"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.20.0",
@@ -34,6 +37,6 @@
 		"eslint-config-next": "14.2.3",
 		"postcss": "^8",
 		"tailwindcss": "^3.4.1",
-		"typescript": "^5"
+		"typescript": "^5.4.5"
 	}
 }
