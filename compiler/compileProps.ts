@@ -6,8 +6,7 @@ interface PropMeta {
 	name: string
 	type: string
 	defaultValue: string
-	required: string
-	validator: string
+	required: boolean
 }
 
 export default function compileProps(ast: Statement, ms: MagicString) {
@@ -72,9 +71,11 @@ function processPropItem(item: ObjProperty, ms: MagicString) {
 			}
 			if (iitem.key.name === 'default') {
 				const raw = ms.slice(iitem.value.start as number, iitem.value.end as number)
+				// eslint-disable-next-line no-eval
 				defaultValue = eval(`(${raw})()`)
 			}
 			if (iitem.key.name === 'required') {
+				// @ts-expect-error
 				required = iitem.value.value
 			}
 			if (iitem.key.name === 'validator') {
